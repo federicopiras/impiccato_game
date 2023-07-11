@@ -1,12 +1,19 @@
 import random
 
 
-def fun1():
-    pass
+def replace_values(stringa, stringa_nascosta, char):
+    """
+    Funzione che sostituisce char nella stringa nascosta, nella posizione in cui char è presente in stringa.
 
 
-def fun2():
-    pass
+    :param stringa: str. parola da indovinare.
+    :param stringa_nascosta: list. parola contenitore delle lettere indovinate.
+    :param char: str. lettera da sostituire agli _
+    :return:
+    """
+    for i, l in enumerate(stringa):
+        if l == char:
+            stringa_nascosta[i] = char
 
 
 # Scelta del livello: facciamo selezionare da utente sia la difficoltà delle parole che il numero di tentativi con cui
@@ -45,9 +52,10 @@ while contatore < n_tentativi and '_' in parola_nascosta:
     # Se la lettera è presente...
     if lettera in parola:
         # Cerchiamo gli indici e sostituiamo la lettera nella posizione dove è presente
-        for i, l in enumerate(parola):
-            if l == lettera:
-                parola_nascosta[i] = lettera
+        replace_values(parola, parola_nascosta, lettera)
+        # for i, l in enumerate(parola):
+        #     if l == lettera:
+        #         parola_nascosta[i] = lettera
         print("Bravo, la lettera è presente nella parola!\n")
 
     else:
