@@ -1,4 +1,4 @@
-## Gioco dell'impiccato in python
+## Gioco dell'impiccato in python - Corso Data Science EXPERIS
 
 
 ### Descrizione
